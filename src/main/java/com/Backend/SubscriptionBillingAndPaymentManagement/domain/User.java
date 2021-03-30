@@ -1,5 +1,7 @@
 package com.Backend.SubscriptionBillingAndPaymentManagement.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,12 +13,14 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long id;
 
     private String userId;
     private String firstName;
     private String lastName;
     private String username;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     private String email;
     private String profileImageUrl;
@@ -41,7 +45,7 @@ public class User implements Serializable {
         this.email = email;
         this.profileImageUrl = profileImageUrl;
         this.lastLoginDate = lastLoginDate;
-        LastLoginDateDisplay = lastLoginDateDisplay;
+        this.LastLoginDateDisplay = lastLoginDateDisplay;
         this.joinDate = joinDate;
         this.role = role;
         this.authorities = authorities;

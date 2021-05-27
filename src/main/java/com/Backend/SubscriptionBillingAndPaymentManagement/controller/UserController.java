@@ -35,7 +35,7 @@ import static org.springframework.http.HttpStatus.*;
 import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 
 @RestController
-@RequestMapping(path = {"/", "/user"})
+@RequestMapping(path = { "/user"})
 public class UserController extends ExceptionHandling {
 
     public static final String EMAIL_SENT = "An Email sent to ";

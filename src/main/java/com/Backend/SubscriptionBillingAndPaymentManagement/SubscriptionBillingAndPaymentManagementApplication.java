@@ -43,4 +43,5 @@ public class SubscriptionBillingAndPaymentManagementApplication {
 		return new BCryptPasswordEncoder();
 	}
 
+
 }

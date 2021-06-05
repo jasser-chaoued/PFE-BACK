@@ -41,7 +41,7 @@ public class OrderController {
         return this.orderService.getAllOrders();
     }
 
-@PostMapping
+    @PostMapping
     public ResponseEntity<Order> create (@RequestBody OrderForm form){
         List<OrderProductDto> formDtos = form.getProductOrders();
         validateProductExistance(formDtos);
@@ -53,7 +53,7 @@ public class OrderController {
         for (OrderProductDto orderProductDto : formDtos) {
             orderProducts.add(orderProductService.create(new OrderProduct(order, productService.findProductById(
                     orderProductDto.getProduct()
-            .getId()), orderProductDto.getQuantity())));
+                            .getId()), orderProductDto.getQuantity())));
         }
         order.setOrderProducts(orderProducts);
 
@@ -64,11 +64,12 @@ public class OrderController {
                 .path("/order/{id}")
                 .buildAndExpand(order.getId())
                 .toString();
-    HttpHeaders headers = new HttpHeaders();
-    headers.add("Location", uri);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", uri);
 
-    return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
-}
+        return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
+    }
+
 
 
     private void validateProductExistance(List<OrderProductDto> orderProducts){

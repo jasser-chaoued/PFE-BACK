@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Order {
     @JsonFormat(pattern = "dd/MM/yyyy") private LocalDate dateCreated;
 
     private String status;
+
 
     @OneToMany(mappedBy = "pk.order")
     @Valid
@@ -69,4 +71,5 @@ public class Order {
     public void setOrderProducts(List<OrderProduct> orderProducts) {
         this.orderProducts = orderProducts;
     }
+
 }

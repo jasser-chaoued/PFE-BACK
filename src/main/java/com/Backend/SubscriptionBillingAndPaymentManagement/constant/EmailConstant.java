@@ -8,6 +8,7 @@ public class EmailConstant {
     public static final String FROM_EMAIL = "support@teamwill.com";
     public static final String CC_EMAIL = "";
     public static final String EMAIL_SUBJECT = "TeamWill, LLC - New Password";
+    public static final String EMAIL_BILL_SUBJECT = "TeamWill, LLC - Your Bill";
     public static final String GMAIL_SMTP_SERVER = "smtp.gmail.com";
     public static final String SMTP_HOST = "mail.smtp.host";
     public static final String SMTP_AUTH = "mail.smtp.auth";

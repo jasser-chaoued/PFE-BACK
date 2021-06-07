@@ -20,6 +20,8 @@ public class Order {
 
     private String status;
 
+    private String UserEmail;
+
 
     @OneToMany(mappedBy = "pk.order")
     @Valid
@@ -72,4 +74,11 @@ public class Order {
         this.orderProducts = orderProducts;
     }
 
+    public String getUserEmail() {
+        return UserEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        UserEmail = userEmail;
+    }
 }
